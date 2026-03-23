@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rupa Digital Marketing Agency – Suddu Kumar</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #18a832;
+    --green-dark: #0f7a24;
+    --green-light: #a8e063;
+    --black: #0d0d0d;
+    --white: #ffffff;
+    --grey: #f4f4f0;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em;
+    color: var(--white);
+  }
+  .logo span { color: var(--green); }
+  nav ul { list-style: none; display: flex; gap: 40px; }
+  nav ul a {
+    font-size: .88rem; font-weight: 500; color: rgba(255,255,255,.65);
+    text-decoration: none; letter-spacing: .04em; text-transform: uppercase;
+    transition: color .2s;
+  }
+  nav ul a:hover { color: var(--green); }
+  .nav-cta {
+    background: var(--green); color: var(--white) !important;
+    padding: 10px 22px; border-radius: 30px;
+    font-weight: 600 !important; transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--green-dark) !important; color: var(--white) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute; right: -100px; top: -80px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(24,168,50,.35) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: .7; }
+    50% { transform: scale(1.08); opacity: 1; }
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(24,168,50,.15); border: 1px solid rgba(24,168,50,.4);
+    color: var(--green-light); border-radius: 30px;
+    padding: 6px 16px; font-size: .8rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase; margin-bottom: 28px;
+  }
+  .hero-tag::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: blink 1.2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 800; line-height: 1.0;
+    letter-spacing: -.03em; margin-bottom: 24px;
+  }
+  h1 .accent { color: var(--green); }
+  .hero-sub {
+    font-size: 1.05rem; color: rgba(255,255,255,.6);
+    line-height: 1.7; max-width: 480px; margin-bottom: 40px;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--green); color: #fff;
+    padding: 14px 34px; border-radius: 40px;
+    font-weight: 600; font-size: .95rem; text-decoration: none;
+    transition: transform .2s, background .2s; display: inline-block;
+  }
+  .btn-primary:hover { transform: translateY(-2px); background: var(--green-dark); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,.3); color: var(--white);
+    padding: 14px 34px; border-radius: 40px;
+    font-weight: 500; font-size: .95rem; text-decoration: none;
+    transition: border-color .2s, transform .2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--green); transform: translateY(-2px); }
+
+  /* hero right side */
+  .hero-right {
+    display: flex; justify-content: center; align-items: center;
+    position: relative; z-index: 2;
+  }
+  .hero-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 24px; padding: 40px;
+    text-align: center; max-width: 320px;
+    backdrop-filter: blur(10px);
+    animation: float 3s ease-in-out infinite;
+  }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  .hero-avatar {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: var(--green); margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800;
+    color: #fff; border: 4px solid rgba(255,255,255,.2);
+  }
+  .hero-card h3 { font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: 4px; }
+  .hero-card p { color: rgba(255,255,255,.5); font-size: .85rem; margin-bottom: 20px; }
+  .stat-row { display: flex; justify-content: space-around; gap: 12px; }
+  .stat { text-align: center; }
+  .stat .num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--green); }
+  .stat .lbl { font-size: .72rem; color: rgba(255,255,255,.45); text-transform: uppercase; letter-spacing: .05em; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 100px 60px; }
+  .section-tag {
+    font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 14px; display: block;
+  }
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -.02em; margin-bottom: 20px;
+  }
+  .section-sub {
+    color: rgba(255,255,255,.55); font-size: 1rem;
+    line-height: 1.7; max-width: 520px;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--grey); color: var(--black); }
+  #about .section-title { color: var(--black); }
+  #about .section-sub { color: rgba(0,0,0,.6); }
+  #about .section-tag { color: var(--green-dark); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .about-text p { font-size: 1.05rem; line-height: 1.8; color: rgba(0,0,0,.7); margin-bottom: 16px; }
+  .about-visual {
+    background: var(--green); border-radius: 24px;
+    padding: 50px 40px; text-align: center; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .about-visual::before {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 180px; height: 180px; border-radius: 50%;
+    background: rgba(255,255,255,.12);
+  }
+  .about-visual .big { font-family: 'Syne', sans-serif; font-size: 4rem; font-weight: 800; line-height: 1; }
+  .about-visual .small { font-size: .9rem; opacity: .8; margin-top: 8px; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--black); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 56px;
+  }
+  .service-card {
+    background: rgba(255,255,255,.04);
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 20px; padding: 36px 32px;
+    transition: transform .25s, border-color .25s, background .25s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    height: 3px; width: 0; background: var(--green);
+    transition: width .35s;
+  }
+  .service-card:hover { transform: translateY(-6px); border-color: rgba(24,168,50,.4); background: rgba(24,168,50,.06); }
+  .service-card:hover::after { width: 100%; }
+  .service-icon {
+    width: 52px; height: 52px; border-radius: 14px;
+    background: rgba(24,168,50,.15); border: 1px solid rgba(24,168,50,.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 24px;
+  }
+  .service-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.15rem; margin-bottom: 14px; }
+  .service-card ul { list-style: none; }
+  .service-card ul li {
+    font-size: .88rem; color: rgba(255,255,255,.55);
+    padding: 5px 0; display: flex; align-items: center; gap: 8px;
+  }
+  .service-card ul li::before { content: '→'; color: var(--green); font-size: .85rem; }
+
+  /* ── CLIENTS ── */
+  #clients { background: rgba(255,255,255,.02); border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+  .clients-header { text-align: center; margin-bottom: 60px; }
+  .clients-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; }
+  .client-chip {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 40px; padding: 14px 28px;
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: .9rem; letter-spacing: .02em;
+    transition: border-color .2s, background .2s, color .2s;
+  }
+  .client-chip:hover { border-color: var(--green); background: rgba(24,168,50,.1); color: var(--green-light); }
+
+  /* ── CTA ── */
+  #contact {
+    background: var(--green);
+    text-align: center; padding: 100px 60px;
+    position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: ''; position: absolute; top: -120px; left: -120px;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(255,255,255,.1); pointer-events: none;
+  }
+  #contact::after {
+    content: ''; position: absolute; bottom: -80px; right: -80px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(0,0,0,.1); pointer-events: none;
+  }
+  #contact .section-title { color: #fff; }
+  #contact .section-sub { color: rgba(255,255,255,.75); margin: 0 auto 40px; }
+  .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 16px; }
+  .contact-item {
+    background: rgba(255,255,255,.15);
+    border-radius: 14px; padding: 16px 28px;
+    font-weight: 500; font-size: .95rem;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); text-align: center;
+    padding: 32px 60px; border-top: 1px solid rgba(255,255,255,.07);
+    color: rgba(255,255,255,.3); font-size: .82rem;
+  }
+  footer span { color: var(--green); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    nav { padding: 16px 24px; }
+    nav ul { display: none; }
+    #hero { grid-template-columns: 1fr; padding: 100px 24px 60px; }
+    .hero-right { margin-top: 48px; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    section { padding: 70px 24px; }
+    #contact { padding: 70px 24px; }
+    footer { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">RUPA <span>Digital</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-left">
+    <div class="hero-tag">Rupa Digital Marketing Agency</div>
+    <h1>Grow Your<br>Brand <span class="accent">Online</span><br>Faster.</h1>
+    <p class="hero-sub">Performance Marketing & eCommerce expert helping brands generate leads, boost sales, and achieve exceptional ROI through data-driven ad campaigns.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-avatar">SK</div>
+      <h3>Suddu Kumar</h3>
+      <p>Performance Marketing Specialist</p>
+      <div class="stat-row">
+        <div class="stat"><div class="num">5+</div><div class="lbl">Clients</div></div>
+        <div class="stat"><div class="num">6</div><div class="lbl">Services</div></div>
+        <div class="stat"><div class="num">↑ROI</div><div class="lbl">Driven</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-title">Result-Driven Digital Marketing Professional</h2>
+      <p>I am Suddu Kumar, a professional freelancer based in Gurgaon, specializing in Performance Marketing and eCommerce Account Management.</p>
+      <p>I run result-driven ad campaigns to help brands generate leads, increase sales, and achieve better ROI — across Meta, Google, and all major eCommerce platforms.</p>
+      <a href="#contact" class="btn-primary" style="margin-top:12px; display:inline-block;">Let's Work Together</a>
+    </div>
+    <div class="about-visual">
+      <div class="big">ROI<br>First</div>
+      <div class="small">Every campaign is built around<br>measurable results & real growth.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <span class="section-tag">What I Offer</span>
+  <h2 class="section-title">Services</h2>
+  <p class="section-sub">Full-stack digital marketing — from paid ads to eCommerce and SEO — tailored for brands that want to grow.</p>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">📣</div>
+      <h3>Meta Advertising</h3>
+      <ul>
+        <li>Meta Business Suite Setup</li>
+        <li>Sales Conversion Campaigns</li>
+        <li>Brand Awareness & Lead Generation</li>
+        <li>Performance Tracking & Reporting</li>
+        <li>Instagram Marketing</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>Google Ads</h3>
+      <ul>
+        <li>Search & Display Campaigns</li>
+        <li>Conversion Tracking Setup</li>
+        <li>Google Tag Manager</li>
+        <li>Tag Setup & Configuration</li>
+        <li>Google Analytics Integration</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Management</h3>
+      <ul>
+        <li>Instagram Marketing</li>
+        <li>Facebook Marketing</li>
+        <li>LinkedIn Marketing</li>
+        <li>YouTube Channel Management</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🛒</div>
+      <h3>eCommerce Management</h3>
+      <ul>
+        <li>Amazon Seller Account Management</li>
+        <li>Flipkart Seller Management</li>
+        <li>Meesho Store Handling</li>
+        <li>Shopify Store Management</li>
+        <li>WordPress eCommerce Handling</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📍</div>
+      <h3>Google Business Profile</h3>
+      <ul>
+        <li>Complete Profile Setup</li>
+        <li>SEO-Based Optimization</li>
+        <li>High-Quality Image Upload</li>
+        <li>Review & Reputation Management</li>
+        <li>Local Lead Generation Strategy</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🚀</div>
+      <h3>SEO Services</h3>
+      <ul>
+        <li>Keyword Research & Placement</li>
+        <li>Title & Meta Description Optimization</li>
+        <li>URL Structure Optimization</li>
+        <li>Image Alt Tags Optimization</li>
+        <li>Internal Linking Strategy</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="clients-header">
+    <span class="section-tag">Trusted By</span>
+    <h2 class="section-title">Organizations I've Worked With</h2>
+  </div>
+  <div class="clients-grid">
+    <div class="client-chip">Tea Leaf & Co.</div>
+    <div class="client-chip">Cuisineo Banquet</div>
+    <div class="client-chip">Khadi Pure Gramodyog</div>
+    <div class="client-chip">Flora Peach</div>
+    <div class="client-chip">Pinakin Event & Entertainment</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <span class="section-tag" style="color:rgba(255,255,255,.7)">Get in Touch</span>
+  <h2 class="section-title">Ready to Grow Your Brand?</h2>
+  <p class="section-sub">Let's build campaigns that deliver real results. Reach out today and let's talk about your goals.</p>
+  <div class="contact-info">
+    <div class="contact-item">📞 +91 72505 77701</div>
+    <div class="contact-item">✉️ rupassnaa@gmail.com</div>
+    <div class="contact-item">📍 Gurgaon</div>
+  </div>
+  <div style="margin-top:36px;">
+    <a href="mailto:rupassnaa@gmail.com" class="btn-outline" style="border-color:rgba(255,255,255,.5); color:#fff;">Send Me a Message</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 <span>Rupa Digital Marketing Agency</span> · Suddu Kumar · Gurgaon
+</footer>
+
+</body>
+</html>
